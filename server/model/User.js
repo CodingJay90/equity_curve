@@ -7,6 +7,14 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    first_name: {
+      type: String,
+      required: true,
+    },
+    last_name: {
+      type: String,
+      required: true,
+    },
     email: {
       type: String,
       unique: true,
@@ -32,6 +40,13 @@ const userSchema = new mongoose.Schema(
         ref: "Plans",
       },
     ],
+  },
+  {
+    toJSON: {
+      transform(doc, ret) {
+        delete ret.password;
+      },
+    },
   },
   {
     timestamps: true,

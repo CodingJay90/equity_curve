@@ -1,8 +1,8 @@
-export async function callApi(url, type, body, headerToken) {
+export async function callApi(url, method, body, headerToken) {
   try {
     const data = await (
       await fetch(url, {
-        type,
+        method,
         body: JSON.stringify(body),
         headers: {
           "Content-type": "Application/json",

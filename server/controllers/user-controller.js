@@ -2,9 +2,10 @@ import { generateToken } from "../utils/auth.js";
 import bcrypt from "bcryptjs";
 import { validationResult } from "express-validator";
 import User from "../model/User.js";
+import _ from "lodash";
 
 export async function registerUser(req, res) {
-  const { email, username, avatar, password } = req.body;
+  const { email, username, avatar, password, first_name, last_name } = req.body;
 
   const salt = await bcrypt.genSalt();
   const hashedPassword = await bcrypt
@@ -22,6 +23,8 @@ export async function registerUser(req, res) {
       email,
       avatar,
       username,
+      first_name,
+      last_name,
       password: hashedPassword,
     });
 
@@ -55,6 +58,7 @@ export async function loginUser(req, res) {
       });
     }
     const token = await generateToken(foundUser);
+    // var sanitizedUser = _.omit(foundUser.toObject(), "password");
     res.status(200).json({ success: true, token, user: foundUser });
   } catch (err) {
     console.log(err.message);
