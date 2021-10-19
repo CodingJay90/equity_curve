@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+    <title>Tradee | Signup</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="flex align-center flex-around">
+            <div class="brand">
+                <div class="brand-logo">
+                    <a href="/">
+                        <img src="./assets/images/nav-logo.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="links">
+                <ul class="nav-group flex">
+                    <li class="nav-item"><a href="#plans">plans</a></li>
+                    <li class="nav-item"><a href="#testimonial">testimonial</a></li>
+                    <!-- <li class="nav-item"><a href="#about">about</a></li> -->
+                    <li class="nav-item"><a href="#demo">demo</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <ul class="nav-group flex align-center">
+                    <li class="nav-item"><a href="#plans">login</a></li>
+                    <li class="nav-item"><a href="#testimonial">signup</a></li>
+                    <li class="nav-item" id="btn-fancy">
+                        <a href="#about">free trial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="signup-container">
+                <div class="flex">
+                    <div class="img-block">
+                    </div>
+                    <div class="text-block">
+                        <div class="form-wrapper">
+                            <h1>Siun up</h1>
+                            <form id="signup-form">
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="email" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="first_name" placeholder="First name" id="first_name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="last_name" placeholder="last Name" id="last_name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="user_name" placeholder="Username" id="user_name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" placeholder="password" id="password">
+                                </div>
+                                <input type="submit" value="Register">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="login-container d-none">
+                <div class="flex">
+                    <div class="text-block">
+                        <div class="form-wrapper">
+                            <h1>Login</h1>
+                            <form id="login-form">
+                                <div class="form-group">
+                                    <input type="email" name="email" placeholder="email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" name="password" placeholder="password">
+                                </div>
+                                <input type="submit" value="Login">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="img-block"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="togglePage()">click me</button>
+    <script>
+        function togglePage() {
+            var container = document.querySelector(".container");
+            container.classList.toggle("active");
+        }
+    </script>
+    <script src="https://www.jsdelivr.com/package/npm/dotenv"></script>
+    <script src="./js/auth.js" type="module"></script>
+</body>
+
+</html>

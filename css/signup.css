@@ -1,0 +1,66 @@
+.d-none {
+  /* display: none; */
+}
+
+.container .wrapper {
+  position: relative;
+  transition: all 1s ease;
+}
+
+.container .wrapper .signup-container,
+.container .wrapper .login-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.container .wrapper .signup-container {
+  z-index: 2;
+}
+.signup-container .flex,
+.login-container .flex {
+  position: relative;
+}
+.signup-container .img-block {
+  background-color: crimson;
+  height: 50vh;
+  transition: all 1s ease;
+}
+.login-container .img-block {
+  background-color: purple;
+  height: 50vh;
+  right: initial;
+  transition: all 1s ease;
+}
+.signup-container .text-block,
+.login-container .text-block {
+  background-color: #fff;
+  z-index: 2;
+}
+/* active styles */
+.active .signup-container .img-block {
+  position: absolute;
+  right: 0;
+}
+.active .signup-container .text-block {
+  visibility: hidden;
+  pointer-events: none;
+  left: 0;
+}
+.active .signup-container {
+  z-index: -1 !important;
+}
+.active .login-container .img-block {
+  position: absolute;
+  right: 0;
+}
+.active .login-container .text-block {
+  visibility: visible;
+  pointer-events: initial;
+  left: 0;
+}
+/* .container .wrapper .login-container {
+  position: absolute;
+} */

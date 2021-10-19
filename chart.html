@@ -1,0 +1,106 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootrat Book</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <button class="btn btn-secondary">Add 3</button>
+      <button class="btn btn-danger">Subtract 1</button>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+      integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- <script>
+      // const labels = ["0", "1", "2", "3", "4", "5", 6];
+      const labels = [];
+      for (var i = 1; i < 15; i++) {
+        labels.push(`Day ${i}`);
+      }
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: "30 years data",
+            backgroundColor: "rgb(255, 99, 132)",
+            borderColor: "rgb(255, 99, 132)",
+            data: [
+              4861, 7022, 3426, 5020, 6394, 5043, 4861, 7022, 4888, 3020, 6394,
+              7022, 3326, 8000,
+            ],
+          },
+        ],
+      };
+      const config = {
+        type: "line",
+        data: data,
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: "30 years total",
+            },
+          },
+          interaction: {
+            mode: "index",
+            intersect: false,
+          },
+          scales: {
+            x: {
+              display: true,
+              title: {
+                display: true,
+                text: "Day",
+              },
+            },
+            y: {
+              display: true,
+              title: {
+                display: true,
+                text: "Amount",
+              },
+            },
+          },
+        },
+      };
+      var myChart = new Chart(document.getElementById("myChart"), config);
+    </script> -->
+    <script src="./index.js"></script>
+
+    <script>
+      const txt = "banana";
+      for (let i = 0; (i = txt.length); i++) {
+        if (txt.charAt(i).toLowerCase()) {
+          console.log("lowercase found");
+        } else {
+          console.log("object");
+        }
+      }
+    </script>
+  </body>
+</html>
