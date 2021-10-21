@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/buttons.css">
+    <title>Tradee | New Plan</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="flex align-center flex-around">
+            <div class="brand">
+                <div class="brand-logo">
+                    <a href="/">
+                        <img src="./assets/images/nav-logo.png" alt="" />
+                    </a>
+                </div>
+            </div>
+            <div class="links">
+                <ul class="nav-group flex">
+                    <li class="nav-item"><a href="#plans">plans</a></li>
+                    <li class="nav-item"><a href="#testimonial">testimonial</a></li>
+                    <li class="nav-item"><a href="#demo">demo</a></li>
+                </ul>
+            </div>
+            <div class="links">
+                <ul class="nav-group flex align-center">
+                    <li class="nav-item" id="btn-fancy">
+                        <a href="#about">free trial</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="wrapper">
+            <div class="signup-container">
+                <div class="flex">
+                    <div class="text-block">
+                        <div class="form-wrapper">
+                            <h1>Siun up</h1>
+                            <div class="plan-cards">
+                                <input type="radio" name="plan" value="Basic"> basic
+                                <input type="radio" name="plan" value="Pro"> pro
+                                <input type="radio" name="plan" value="Ultimate"> ultimate
+                            </div>
+                            <form id="plan-form">
+                                <div class="form-group">
+                                    <input type="number" name="start_balance" placeholder="start_balance" id="email">
+                                </div>
+                                <input type="submit" value="Register">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
+        integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/plan.js" type="module"></script>
+</body>
+
+</html>
