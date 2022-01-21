@@ -42,9 +42,9 @@ export async function loginUser(req, res) {
     const foundUser = await User.findOne({ email: req.body.email });
     if (!foundUser) {
       console.log("User not found");
-      return res.json({
+      return res.status(400).json({
         success: false,
-        message: "A user with the given email do not exist",
+        message: "A user with the given email does not exist",
       });
     }
     const validatePassword = await bcrypt.compare(
@@ -52,12 +52,12 @@ export async function loginUser(req, res) {
       foundUser.password
     );
     if (!validatePassword) {
-      return res.json({
+      return res.status(400).json({
         success: false,
         message: "Invalid Credentials. Password does not match",
       });
     }
-    const token = await generateToken(foundUser);
+    const token = generateToken(foundUser);
     // var sanitizedUser = _.omit(foundUser.toObject(), "password");
     res.status(200).json({ success: true, token, user: foundUser });
   } catch (err) {

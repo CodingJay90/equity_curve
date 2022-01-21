@@ -1,0 +1,144 @@
+@import "./partials/_mixins.scss";
+:root {
+  --general-main-1: #0e0e0e;
+  --general-main-2: #151717;
+  --button-secondary-hover: hsla(0, 0%, 100%, 0.08);
+  --overlay: rgba(0, 0, 0, 0.72);
+  --shadow-menu: rgba(0, 0, 0, 0.84);
+  --status-danger: #cc2e3d;
+  --status-warning: #ffad3a;
+  --status-info: #377cfc;
+  --badge-blue: #0677af;
+  --badge-violet: #2a3052;
+  --badge-green: #00a79e;
+}
+
+.notification {
+  position: fixed;
+  top: calc(100vh - 90vh);
+  z-index: 1000;
+  right: 2%;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px 0 var(--overlay), 0 4px 6px 0 var(--overlay);
+  background-color: var(--general-main-1);
+  opacity: 0.5;
+  color: var(--text-prominent);
+  display: flex;
+  max-width: 40rem;
+  overflow: hidden;
+  padding: 0.89rem;
+  transition: all 0.5s ease;
+  width: 20vw;
+  transform: translateX(130%);
+  @include tabletBreakpoint() {
+    width: 35vw;
+  }
+
+  &__icon {
+    &-background {
+      bottom: -5px;
+      left: -25px;
+      opacity: 0.17;
+      pointer-events: none;
+      position: absolute;
+      z-index: 0;
+      background: url(https://img.icons8.com/cotton/64/000000/info--v5.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: left;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+  }
+  &__header {
+    color: var(--status-info);
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    width: 75%;
+  }
+  &__text-body {
+    width: 75%;
+    font-size: 0.7em;
+    line-height: 1.43;
+    color: #fff;
+  }
+
+  &__close-button {
+    background: 0 0;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 1.6rem;
+    top: 0.4rem;
+    top: 1rem;
+    visibility: visible;
+    z-index: 2;
+
+    &::after {
+      color: #fff;
+      content: "\0000D7";
+      font-size: 30px;
+      font-weight: 300;
+    }
+  }
+
+  &--enter {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.loading {
+  background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.8;
+
+  svg {
+    font-size: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    animation: text 1s ease-in-out infinite;
+  }
+
+  polygon {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 1;
+    animation: dash 4s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite
+      alternate-reverse;
+  }
+}
+
+@keyframes text {
+  50% {
+    opacity: 0.1;
+  }
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 234;
+  }
+}
